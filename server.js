@@ -7,9 +7,6 @@ const studentsRoutes = require("./controllers/students")
 
 const { PORT, MONGODB_URI } = process.env;
 
-console.log(PORT)
-console.log(MONGODB_URI)
-
 mongoose.connect(MONGODB_URI, (err) => {
     if (err) {
         console.error(err)
@@ -18,7 +15,7 @@ mongoose.connect(MONGODB_URI, (err) => {
     }
 })
 
-const port = PORT
+const port = PORT || 8000
 
 const app = express()
 
